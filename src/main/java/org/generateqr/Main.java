@@ -35,7 +35,7 @@ public class Main {
         }
     }
 
-    private static File generateQRCode(String data, int width, int height) throws WriterException, IOException {
+    public static File generateQRCode(String data, int width, int height) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(data, BarcodeFormat.QR_CODE, width, height);
 
@@ -60,7 +60,7 @@ public class Main {
         return qrCodeFile;
     }
 
-    private static void openImage(File file) {
+    public static void openImage(File file) {
         try {
             if (Desktop.isDesktopSupported()) {
                 Desktop.getDesktop().open(file);
